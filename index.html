@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>三国杀卡牌生成器</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js" type="text/javascript"></script>
+
+    </head>
+    <body>
+        <div id="container">
+            <form enctype="multipart/form-data" action="sgs.php" method="POST">
+            
+                <input type="file" name="pic" /> 上传图片 推荐大小为 宽366 高514<br/>
+                <input type="text" name="name" /> 姓名 (最多3字) <br/>
+                <input type="text" name="chenghao" /> 称号 (最多4字) <br/>
+                <input type="radio" name="race" value="shu" checked="true"/> 蜀
+                <input type="radio" name="race" value="wu"/> 吴
+                <input type="radio" name="race" value="wei"/> 魏
+                <input type="radio" name="race" value="qx"/> 群雄
+                <select id="blood" name="blood">
+                <option value="3">3血</option>
+                <option value="4">4血</option>
+                <option value="5">5血</option>
+                <option value="6">6血</option>
+                <option value="7">7血</option>
+                </select>
+                <fieldset>
+                    <input type="text" name="skill[0][title]" /> 技能1 名称(最多2字)
+                    <textarea name="skill[0][desc]"]></textarea> 技能1 描述
+                </fieldset>
+                <fieldset>
+                    <input type="text" name="skill[1][title]" /> 技能2 名称(最多2字)
+                    <textarea name="skill[1][desc]"]></textarea> 技能2 描述
+                </fieldset>
+                <fieldset>
+                    <input type="text" name="skill[2][title]" /> 技能3 名称(最多2字)
+                    <textarea name="skill[2][desc]"]></textarea> 技能3 描述
+                </fieldset>
+                <input type="submit" value="提交"/>
+            </form>
+
+
+            最多创建三技能，20个字符算一行文字。如果超出所有技能超过6行文字会自动删除超出的技能。
+
+        
+        </div>
+    </body>
+</html>

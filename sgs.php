@@ -17,12 +17,12 @@ class sgs{
     public $height = 514; 
     
     function __construct($fileSavePath = null){
+        $this->getAbsolutePath();
         if($fileSavePath){
             $this->destination = $fileSavePath;
             $this->im = $this->getImageFromPath($this->destination);
         }else{
             if($this->saveFile()){
-                $this->getAbsolutePath();
                 $this->im = $this->getImageFromPath($this->destination);
             }else{
                 die("上传失败");

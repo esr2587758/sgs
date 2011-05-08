@@ -1,4 +1,5 @@
 $(function(){
+//    debug();
     $('.action').toggle(function(){
         $(this).removeClass('atb').addClass('at');
         $(this).next().slideDown();    
@@ -74,5 +75,18 @@ function loadingAnimate(show){
     }else{
         $('.loading').addClass('hide');
     }
+
+}
+
+function debug(){
+var divDoms = document.getElementsByTagName('div');
+for(var i=0; i < divDoms.length;i++){
+    if(divDoms[i]){
+       var classString = (divDoms[i].getAttribute('class')||divDoms[i].getAttribute('className'));
+    }
+    if(classString && classString.indexOf('loading')>=0){
+       var loadingDom = divDoms[i]; 
+    }
+}
 
 }

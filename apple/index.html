@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>苹果味道的三国杀卡牌制作器</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="css/apple.css"/>
+    <script type="text/javascript" src="js/jquery.js"> </script>
+    <script type="text/javascript" src="js/apple.js"> </script>
+</head>
+<body>
+    <div class="main">
+        <div class="container-wraper">
+            <div class="acap">
+              <div>
+                <a href="" class="btn cancel"></a>
+                <p class="title">创建武将</p>
+                <a href="" class="btn submit"></a>
+            </div>
+        </div>
+        <div class="container">
+            <input type="text" class="at name" value="姓名" ></input>
+            <input type="text" class="ab chenghao" value="称号" ></input>
+            <div class="atb action blood" rel="3">血量</div>
+            <ul style="display:none">
+                <li class="ac" rel="3">三血</li>
+                <li class="ac" rel="4">四血</li>
+                <li class="ac" rel="5">五血</li>
+                <li class="ab" rel="6">六血</li>
+            </ul>
+            <div class="atb action race" rel="wei">阵营</div>
+            <ul style="display:none">
+                <li class="ac" rel="wei">魏国</li>
+                <li class="ac" rel="shu">蜀国</li>
+                <li class="ac" rel="wu">吴国</li>
+                <li class="ab" rel="qx">群雄</li>
+            </ul>
+            <input type="text" class="atb s1t" value="技能" />
+            <textarea id="" name="" rows="10" class="atb s1d" cols="30">技能描述</textarea>
+        </div>
+
+    </div>
+
+    <div class="image-wraper">
+      <div class="image-container">
+        <form action="../upload_pic.php" method=POST enctype="multipart/form-data" target="ajaxUpload">
+        <input type="file" name="pic" class="fileupload"> 
+        <a class="fileupload-holder"></a>
+        </form>
+        <div rel="" id="pic_path" style="display:none"></div>
+       <iframe name="ajaxUpload" style="display:none"></iframe>
+       <img src="" alt="" id="pic_preview" class="preview hide"/>
+       <div class="loading hide"></div>
+      </div>
+    </div>
+
+
+    </div><!-- main-->
+     
+         
+    	
+</body>
+</html>

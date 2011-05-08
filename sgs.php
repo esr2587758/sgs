@@ -16,17 +16,23 @@ class sgs{
     public $width = 366; 
     public $height = 514; 
     
-    function __construct(){
-
-        $this->getAbsolutePath();
-        if($this->saveFile()){
-            //判断图片类型
+    function __construct($fileSavePath = null){
+        if($fileSavePath){
+            $this->destination = $fileSavePath;
             $this->im = $this->getImageFromPath($this->destination);
-            $this->resizeImage();
-
         }else{
-            die("上传失败");
-        }
+            if($this->saveFile()){
+                $this->getAbsolutePath();
+                $this->im = $this->getImageFromPath($this->destination);
+            }else{
+                die("上传失败");
+            }
+        } 
+        //判断图片类型
+        $this->resizeImage();
+      //  header('content-type:image/png');
+      // imagejpeg($this->im);
+        
     }
 
     /**
@@ -331,9 +337,4 @@ class sgs{
     
 }
 
-
-$xx = new sgs("origin/bg.jpg");
-$xx->params = $_POST;
-$xx->render();
 ?>
-    <img src="<?php echo $xx->art_path;?>" />
